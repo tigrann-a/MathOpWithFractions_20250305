@@ -1,10 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿namespace MathOpWithFractions_20250305;
 
-namespace MathOpWithFractions_20250305
+internal class Fraction
 {
-    internal class Fraction
+    private int _m;
+    private int _n;
+    public int M
     {
+        get { return _m; } 
+        set { _m = value; }
+    }
+    public int N
+    {
+        get { return _n; }
+        set { _n = value; }
     }
 }
