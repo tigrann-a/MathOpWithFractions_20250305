@@ -12,6 +12,12 @@ internal class Fraction
     public int N
     {
         get { return _n; }
-        set { _n = value; }
+        set
+        {
+            if (value == 0)
+                throw new ArgumentException("Denominator cannot be zero");
+            else
+                _n = value;
+        }
     }
 }
