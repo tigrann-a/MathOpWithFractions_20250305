@@ -1,45 +1,36 @@
 ﻿using MathOpWithFractions_20250305;
+using System.Threading.Channels;
 
-Fraction fraction1 = new Fraction();
-fraction1.M = 3;
-fraction1.N = 4;
+Console.WriteLine("Please enter the numerator for the first fraction: ");
+string? numeratorTxt1 = Console.ReadLine();
+bool isNum1 = int.TryParse(numeratorTxt1, out int numerator1);
 
-Fraction fraction2 = new Fraction();
-fraction2.M = 4;
-fraction2.N = 3;
+Console.WriteLine("Please enter the denominator for the first fraction: ");
+string? denominatorTxt1 = Console.ReadLine();
+bool isNum2 = int.TryParse(denominatorTxt1, out int denominator1);
 
-void Add(Fraction f1, Fraction f2, out int numerator, out int denominator)
-{
-    denominator = f1.N * f2.N;
-    numerator = denominator / f1.N * f1.M + denominator / f2.N * f2.M;
-}
+Fraction fraction1 = new Fraction(numerator1, denominator1);
+Console.WriteLine($"{numerator1} / {denominator1}");
 
-void Sub(Fraction f1, Fraction f2, out int numerator, out int denominator)
-{
-    denominator = f1.N * f2.N;
-    numerator = denominator / f1.N * f1.M - denominator / f2.N * f2.M;
-}
+Console.WriteLine("Please enter the numerator for the second fraction: ");
+string? numeratorTxt2 = Console.ReadLine();
+bool isNum3 = int.TryParse(numeratorTxt2, out int numerator2);
 
-void Mul(Fraction f1, Fraction f2, out int numerator, out int denominator)
-{
-    numerator = f1.M * f2.M;
-    denominator = f1.N * f2.N;
-}
+Console.WriteLine("Please enter the denominator for the second fraction: ");
+string? denominatorTxt2 = Console.ReadLine();
+bool isNum4 = int.TryParse(denominatorTxt2, out int denominator2);
 
-void Div(Fraction f1, Fraction f2, out int numerator, out int denominator)
-{
-    numerator = f1.M * f2.N;
-    denominator = f1.N * f2.M;
-}
+Fraction fraction2 = new Fraction(numerator2, denominator2);
+Console.WriteLine($"{numerator2} / {denominator2}");
 
-Add(fraction1, fraction2, out int n1, out int d1);
+fraction1.Add(fraction2, out int n1, out int d1);
 Console.WriteLine($"Addition: {n1}/{d1}");
 
-Sub(fraction1, fraction2, out int n2, out int d2);
+fraction1.Sub(fraction2, out int n2, out int d2);
 Console.WriteLine($"Subtraction: {n2}/{d2}");
 
-Mul(fraction1, fraction2, out int n3, out int d3);
+fraction1.Mul(fraction2, out int n3, out int d3);
 Console.WriteLine($"Multiplication: {n3}/{d3}");
 
-Div(fraction1, fraction2, out int n4, out int d4);
+fraction1.Div(fraction2, out int n4, out int d4);
 Console.WriteLine($"Division: {n4}/{d4}");
