@@ -10,7 +10,7 @@ string? denominatorTxt1 = Console.ReadLine();
 bool isNum2 = int.TryParse(denominatorTxt1, out int denominator1);
 
 Fraction fraction1 = new Fraction(numerator1, denominator1);
-Console.WriteLine($"{numerator1} / {denominator1}");
+//Console.WriteLine($"{numerator1} / {denominator1}");
 
 Console.WriteLine("Please enter the numerator for the second fraction: ");
 string? numeratorTxt2 = Console.ReadLine();
@@ -21,18 +21,22 @@ string? denominatorTxt2 = Console.ReadLine();
 bool isNum4 = int.TryParse(denominatorTxt2, out int denominator2);
 
 Fraction fraction2 = new Fraction(numerator2, denominator2);
-Console.WriteLine($"{numerator2} / {denominator2}");
+//Console.WriteLine($"{numerator2} / {denominator2}");
 
 Fraction fraction = new Fraction();
 
-fraction.Add(fraction1, fraction2, out int n1, out int d1);
-Console.WriteLine($"Addition: {n1}/{d1}");
+fraction = fraction1 + fraction2;
+Console.WriteLine($"{fraction.M} / {fraction.N}");
 
-fraction.Sub(fraction1, fraction2, out int n2, out int d2);
-Console.WriteLine($"Subtraction: {n2}/{d2}");
 
-fraction.Mul(fraction1, fraction2, out int n3, out int d3);
-Console.WriteLine($"Multiplication: {n3}/{d3}");
+//fraction.Add(fraction1, fraction2, out int n1, out int d1);
+//Console.WriteLine($"Addition: {n1}/{d1}");
 
-fraction.Div(fraction1, fraction2, out int n4, out int d4);
-Console.WriteLine($"Division: {n4}/{d4}");
+//fraction.Sub(fraction1, fraction2, out int n2, out int d2);
+//Console.WriteLine($"Subtraction: {n2}/{d2}");
+
+//fraction.Mul(fraction1, fraction2, out int n3, out int d3);
+//Console.WriteLine($"Multiplication: {n3}/{d3}");
+
+//fraction.Div(fraction1, fraction2, out int n4, out int d4);
+//Console.WriteLine($"Division: {n4}/{d4}");
