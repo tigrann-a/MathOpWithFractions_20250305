@@ -28,8 +28,8 @@ internal class Fraction
 
     public Fraction(int _m, int _n)
     {
-        this._m = _m;
-        this._n = _n;
+        M = _m;
+        N = _n;
     }
 
     public void Add(Fraction f1, Fraction f2, out int numerator, out int denominator)
@@ -40,7 +40,7 @@ internal class Fraction
         int minValue = Math.Abs(numerator) < Math.Abs(denominator) ? Math.Abs(numerator) : Math.Abs(denominator);
         Console.WriteLine(minValue);
 
-        if (numerator % denominator != 0)
+        if (numerator % minValue != 0 && denominator % minValue != 0)
         {
             for(int i = minValue - 1; i > 1; i--)
             {
@@ -52,10 +52,10 @@ internal class Fraction
                 }
             }
         }
-        else
+        else if(numerator % minValue != 0 && denominator % minValue != 0)
         {
-            numerator /= denominator;
-            denominator /= denominator;
+            numerator /= minValue;
+            denominator /= minValue;
         }
 
     }
@@ -68,7 +68,7 @@ internal class Fraction
         int minValue = Math.Abs(numerator) < Math.Abs(denominator) ? Math.Abs(numerator) : Math.Abs(denominator);
         Console.WriteLine(minValue);
 
-        if (numerator % denominator != 0)
+        if (numerator % minValue != 0 && denominator % minValue != 0)
         {
             for (int i = minValue - 1; i > 1; i--)
             {
@@ -82,8 +82,8 @@ internal class Fraction
         }
         else
         {
-            numerator /= denominator;
-            denominator /= denominator;
+            numerator /= minValue;
+            denominator /= minValue;
         }
     }
 
@@ -95,7 +95,7 @@ internal class Fraction
         int minValue = Math.Abs(numerator) < Math.Abs(denominator) ? Math.Abs(numerator) : Math.Abs(denominator);
         Console.WriteLine(minValue);
 
-        if (numerator % denominator != 0)
+        if (numerator % minValue != 0 && denominator % minValue != 0)
         {
             for (int i = minValue - 1; i > 1; i--)
             {
@@ -109,8 +109,8 @@ internal class Fraction
         }
         else
         {
-            numerator /= denominator;
-            denominator /= denominator;
+            numerator /= minValue;
+            denominator /= minValue;
         }
     }
 
@@ -122,7 +122,7 @@ internal class Fraction
         int minValue = Math.Abs(numerator) < Math.Abs(denominator) ? Math.Abs(numerator) : Math.Abs(denominator);
         Console.WriteLine(minValue);
 
-        if (numerator % denominator != 0)
+        if (numerator % minValue != 0 && denominator % minValue != 0)
         {
             for (int i = minValue - 1; i > 1; i--)
             {
@@ -136,8 +136,8 @@ internal class Fraction
         }
         else
         {
-            numerator /= denominator;
-            denominator /= denominator;
+            numerator /= minValue;
+            denominator /= minValue;
         }
     }
 }

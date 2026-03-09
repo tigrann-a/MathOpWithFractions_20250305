@@ -28,11 +28,11 @@ Fraction fraction = new Fraction();
 fraction.Add(fraction1, fraction2, out int n1, out int d1);
 Console.WriteLine($"Addition: {n1}/{d1}");
 
-fraction1.Sub(fraction1, fraction2, out int n2, out int d2);
+fraction.Sub(fraction1, fraction2, out int n2, out int d2);
 Console.WriteLine($"Subtraction: {n2}/{d2}");
 
-fraction1.Mul(fraction1, fraction2, out int n3, out int d3);
+fraction.Mul(fraction1, fraction2, out int n3, out int d3);
 Console.WriteLine($"Multiplication: {n3}/{d3}");
 
-fraction1.Div(fraction1, fraction2, out int n4, out int d4);
+fraction.Div(fraction1, fraction2, out int n4, out int d4);
 Console.WriteLine($"Division: {n4}/{d4}");
