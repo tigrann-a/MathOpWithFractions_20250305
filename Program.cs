@@ -1,5 +1,4 @@
 ﻿using MathOpWithFractions_20250305;
-using System.Threading.Channels;
 
 Console.WriteLine("Please enter the numerator for the first fraction: ");
 string? numeratorTxt1 = Console.ReadLine();
@@ -23,20 +22,17 @@ bool isNum4 = int.TryParse(denominatorTxt2, out int denominator2);
 Fraction fraction2 = new Fraction(numerator2, denominator2);
 //Console.WriteLine($"{numerator2} / {denominator2}");
 
-Fraction fraction = new Fraction();
+//Fraction fractionAdd = Fraction.Add(fraction1, fraction2);
+//Fraction fractionSub = Fraction.Sub(fraction1, fraction2);
+//Fraction fractionMul = Fraction.Mul(fraction1, fraction2);
+//Fraction fractionDiv = Fraction.Div(fraction1, fraction2);
 
-fraction = fraction1 + fraction2;
-Console.WriteLine($"{fraction.M} / {fraction.N}");
+Fraction fractionAdd = fraction1 + fraction2;
+Fraction fractionSub = fraction1 - fraction2;
+Fraction fractionMul = fraction1 * fraction2;
+Fraction fractionDiv = fraction1 / fraction2;
 
-
-//fraction.Add(fraction1, fraction2, out int n1, out int d1);
-//Console.WriteLine($"Addition: {n1}/{d1}");
-
-//fraction.Sub(fraction1, fraction2, out int n2, out int d2);
-//Console.WriteLine($"Subtraction: {n2}/{d2}");
-
-//fraction.Mul(fraction1, fraction2, out int n3, out int d3);
-//Console.WriteLine($"Multiplication: {n3}/{d3}");
-
-//fraction.Div(fraction1, fraction2, out int n4, out int d4);
-//Console.WriteLine($"Division: {n4}/{d4}");
+Console.WriteLine($"{fractionAdd.M} / {fractionAdd.N}");
+Console.WriteLine($"{fractionSub.M} / {fractionSub.N}");
+Console.WriteLine($"{fractionMul.M} / {fractionMul.N}");
+Console.WriteLine($"{fractionDiv.M} / {fractionDiv.N}");
